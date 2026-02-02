@@ -1,3 +1,5 @@
+import random
+
 def show_welcome():
     print("======================")
     print("   QUIZ BATTLE GAME")
@@ -74,6 +76,7 @@ def main():
         scores.append(0)
 
     questions = load_questions()
+    random.shuffle(questions)
     rounds = len(questions)
 
     for i in range(rounds):
@@ -87,6 +90,7 @@ def main():
     max_score = max(scores)
     winner_index = scores.index(max_score)
     print("ผู้ชนะคือ", players[winner_index])
+
 
 
 main()
