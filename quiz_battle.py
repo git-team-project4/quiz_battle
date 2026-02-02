@@ -7,10 +7,10 @@ def show_welcome():
 def get_players():
     players = []
 
-    num = int(input("จำนวนผู้เล่น (2-4): "))
+    num = int(input("จำนวนผู้เล่น  (2-4): "))
 
     for i in range(num):
-        name = input("ชื่อผู้เล่นคนที่ " + str(i + 1) + ": ")
+        name = input("ชื่อของผู้เล่นคนที่ " + str(i + 1) + ": ")
         players.append(name)
 
     return players
@@ -48,7 +48,7 @@ def ask_question(player, question):
     for i in range(4):
         print(str(i + 1) + ".", choices[i])
 
-    answer = int(input("เลือกคำตอบ (1-4): "))
+    answer = int(input("จงเลือกคำตอบ (1-4): "))
 
     if answer == correct:
         print("ถูกต้อง!")
@@ -102,3 +102,4 @@ for i in range(len(history)):
 
 
 main()
+
