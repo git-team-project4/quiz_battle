@@ -69,6 +69,8 @@ def main():
 
     players = get_players()
     scores = []
+    history = []
+
 
     for i in range(len(players)):
         scores.append(0)
@@ -81,12 +83,22 @@ def main():
         for j in range(len(players)):
             point = ask_question(players[j], questions[i])
             scores[j] = scores[j] + point
-            show_scores(players, scores)
+            if point == 1:
+        round_history.append(players[j] + " ตอบถูก")
+    else:
+        round_history.append(players[j] + " ตอบผิด")
 
+    show_scores(players, scores)
+
+history.append(round_history)
     print("\n===== จบเกม =====")
     max_score = max(scores)
     winner_index = scores.index(max_score)
+print("\n===== ประวัติการเล่น =====")
+for i in range(len(history)):
+    print("รอบ", i + 1, ":", ", ".join(history[i]))
     print("ผู้ชนะคือ", players[winner_index])
+
 
 
 main()
